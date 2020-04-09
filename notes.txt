@@ -1,0 +1,15 @@
+To do lis
+1.Ui module
+get input values
+add the new item to ui
+update the ui
+
+2. Data module
+add the new item to data structure
+calculate budget
+
+3.Controller module
+Add event handler
+
+Module Pattern -
+

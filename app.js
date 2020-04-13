@@ -1,10 +1,31 @@
 "usestrict";
-// BUDGET CONTROLLER
+// BUDGET CONTROLLER----------------------------
 let budgetController = (function () {
-  //code
+  let Expense = function (id, description, value) {
+    this.id = id;
+    this.description = description;
+    this.value = value;
+  };
+
+  let Income = function (id, description, value) {
+    this.id = id;
+    this.description = description;
+    this.value = value;
+  };
+
+  let data = {
+    allItems: {
+      exp: [],
+      inc: [],
+    },
+    totals: {
+      exp: 0,
+      inc: 0,
+    },
+  };
 })();
 
-// UI CONTROLLER
+// UI CONTROLLER----------------------------
 let uiController = (function () {
   let DOMstrings = {
     inputType: ".add__type",
@@ -27,7 +48,7 @@ let uiController = (function () {
   };
 })();
 
-// GOLOBAL APP CONTROLLER
+// GOLOBAL APP CONTROLLER----------------------------
 let controller = (function (budgetCtrl, UICtrl) {
   let setupEventListeners = function () {
     let DOM = UICtrl.getDOMstrings();

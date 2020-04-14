@@ -8,7 +8,7 @@
 
 # 🤖 Simple app to manage expenses
 
-🏁 Getting Started
+🏁 Getting Started,
    Play with code
 
 🚀 Deploying the projects

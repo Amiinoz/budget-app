@@ -46,6 +46,7 @@ let budgetController = (function () {
 
       // Push it into data structure
       data.allItems[type].push(newItem);
+
       // Return the new element
       return newItem;
     },

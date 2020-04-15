@@ -13,3 +13,5 @@ Add event handler
 
 Module Pattern -
 
+Start clearing out input fields
+

@@ -15,3 +15,10 @@ Module Pattern -
 
 Start clearing out input fields
 
+second part todo
+
+Add event handler
+Delete the item form data structure
+Delete the item from the Ui
+Recalculate budget
+Update the Ui

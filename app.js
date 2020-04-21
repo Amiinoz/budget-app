@@ -1,4 +1,4 @@
-"usestrict";
+// "usestrict";
 //==============================================
 // BUDGET CONTROLLER----------------------------
 //==============================================
@@ -63,7 +63,7 @@ let budgetController = (function () {
       return newItem;
     },
 
-    deleteITem: function (type, id) {
+    deleteItem: function (type, id) {
       let ids, index;
       // id = 6
       // data.allItems[type][id];
@@ -143,7 +143,7 @@ let uiController = (function () {
     },
 
     addListItem: function (obj, type) {
-      let html, newHtml, incomeContainer, expensesContainer;
+      let html, newHtml, element, incomeContainer, expensesContainer;
 
       // Create HTML string with placeholder text
 
@@ -160,7 +160,7 @@ let uiController = (function () {
       // Replace the placeholder text with some actual data
       newHtml = html.replace("%id%", obj.id);
       newHtml = newHtml.replace("%description%", obj.description);
-      newHtml = newHtml.replace("%value%", obj.value);
+      newHtml = newHtml.replace("%value%", obj.value, type); //FIXME:
 
       // Insert the HTML into the DOM
       document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
@@ -257,18 +257,18 @@ let controller = (function (budgetCtrl, UICtrl) {
     }
   };
 
-  let ctrlDeleteItem = function (event) {
-    let itemID, splitID, type, ID;
+  var ctrlDeleteItem = function (event) {
+    var itemID, splitID, type, ID;
     itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
     if (itemID) {
       //inc-0 or inc-1 ...
-      splitID = itemID.splitID("-");
+      splitID = itemID.split("-");
       type = splitID[0];
-      ID = splitID[1];
+      ID = parseInt(splitID[1]);
 
       // 1. delete the item from data structure
-      budgetCtrl.deleteITem(type, id);
+      budgetCtrl.deleteItem(type, ID);
       // 2. delete the item from the UI
       // 3. update and show the new budget
     }
